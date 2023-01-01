@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            font-family: 'Century Gothic';
+            background-color: #333;
+            color: #fff
+        }
+
+        .container {
+            display: grid;
+            place-items: center;
+        }
+
+        .inner {
+            display: grid;
+            justify-content: center;
+            grid-gap: 10px;
+            grid-template-columns: repeat(auto-fit, 150px);
+            width: 80%;
+            padding: 20px 0px 20px 0px;
+            border-radius: 15px;
+            border: 1px solid #ccc;
+        }
+
+        .input-box {
+            width: 90%;
+        }
+
+        .input-box input {
+            width: 100%;
+        }
+
+        .dark-mode .input-box input {
+            background-color: #444;
+            border-color: #555;
+            color: #fff;
+        }
+
+        .input-box input {
+            padding: 3px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .my-form {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            grid-auto-rows: minmax(100px, auto);
+        }
+
+        .column-one {
+            grid-column: 1 / 2;
+        }
+
+        .column-two {
+            grid-column: 2 / 2;
+        }
+
+        .my-console textarea {
+            background-color: black;
+            color: antiquewhite;
+        }
+
+
+
+    </style>
+</head>
+
+<body class="dark-mode">
+    <div class="my-form">
+        <div class="column-one">
+
+            <div class="container">
+                <h2> Add Country </h2>
+                <div class="inner">
+                    <div class="input-box">
+                        <label for="id">Id:</label>
+                        <input type="number" id="id" name="id">
+                    </div>
+                    <div class="input-box">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name">
+                    </div>
+                    <div class="input-box">
+                        <label for="capital">Capital:</label>
+                        <input type="text" id="capital" name="capital">
+                    </div>
+                    <div class="input-box">
+                        <label for="flag">Flag:</label>
+                        <input type="text" id="flag" name="flag">
+                    </div>
+                    <div class="input-box">
+                        <label for="silhouette">Silhouette:</label>
+                        <input type="text" id="silhouette" name="silhouette">
+                    </div>
+                    <div class="input-box">
+                        <label for="population">Population:</label>
+                        <input type="number" id="population" name="population">
+                    </div>
+                    <div class="input-box">
+                        <label for="superfice">Superfice:</label>
+                        <input type="number" id="superfice" name="superfice">
+                    </div>
+                    <div class="input-box">
+                        <label for="continent">Continent:</label>
+                        <input type="text" id="continent" name="continent">
+                    </div>
+                    <div class="input-box">
+                        <label for="pib">PIB:</label>
+                        <input type="number">
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="column-two">
+            <code class="my-console">
+                <textarea id="comentario" rows="10" cols="50" >
+                rr
+                </textarea>
+            </code>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="module" src="index.js"></script>
+
+</body>
+
+</html>
