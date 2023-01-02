@@ -63,19 +63,71 @@
             background-color: black;
             color: antiquewhite;
         }
-        h2{
+
+        h2 {
             text-align: center;
         }
 
- 
 
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn {
+            font-size: 16px;
+            font-family: Century Gothic;
+            padding: 12px 24px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 10px 0px 10px 10px;
+            width: 100px;
+        }
+
+        .btn-get {
+            background-color: #ff9f1a;
+            border-color: #ff9f1a;
+            color: #ffffff;
+        }
+
+        .btn-post {
+            background-color: #9b59b6;
+            border-color: #9b59b6;
+            color: #ffffff;
+        }
+
+        .btn-put {
+            background-color: #27ae60;
+            border-color: #27ae60;
+            color: #ffffff;
+        }
+
+        .btn-delete {
+            background-color: #e74c3c;
+            border-color: #e74c3c;
+            color: #ffffff;
+        }
+
+        .btn:hover {
+            background-color: #efefef;
+            border-color: #efefef;
+            color: #333333;
+        }
+
+        .btn:active {
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background-color: #dddddd;
+            border-color: #dddddd;
+        }
     </style>
 </head>
 
 <body class="dark-mode">
     <h2> Add Country </h2>
     <div class="my-form">
-        
+
         <div class="column-one">
             <div class="container">
                 <div class="inner">
@@ -117,17 +169,22 @@
                     </div>
                 </div>
             </div>
-
-
         </div>
+
         <div class="column-two">
             <code class="my-console">
-                <textarea id="comentario" rows="20" cols="50" >
-                </textarea>
+                <textarea id="my-code" rows="20" cols="50" readonly> </textarea>
             </code>
-
         </div>
     </div>
+
+    <div class="container">
+        <button class="btn btn-get"> Get </button>
+        <button class="btn btn-post"> Post </button>
+        <button class="btn btn-put"> Put </button>
+        <button class="btn btn-delete"> Delete </button>
+    </div>
+
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script type="module" src="index.js"></script>
