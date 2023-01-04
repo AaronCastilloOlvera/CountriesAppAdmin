@@ -47,27 +47,21 @@
 
         .my-form {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            grid-auto-rows: minmax(100px, auto);
-        }
-
-        .column-one {
-            grid-column: 1 / 2;
-        }
-
-        .column-two {
-            grid-column: 2 / 2;
+            grid-template-columns: repeat( auto-fit, minmax(400px, 1fr));
+           /* grid-auto-rows: minmax(100px, auto); */
         }
 
         .my-console textarea {
             background-color: black;
             color: antiquewhite;
+            width: 80%;
+            height: 80%;
+            margin: auto;
         }
 
         h2 {
             text-align: center;
         }
-
 
         .container {
             display: flex;
@@ -172,9 +166,11 @@
         </div>
 
         <div class="column-two">
-            <code class="my-console">
-                <textarea id="my-code" rows="20" cols="50" readonly> </textarea>
-            </code>
+            <div class="container">
+               <code class="my-console">
+                    <textarea id="my-code" rows="15" cols="200" readonly> </textarea>
+                </code>
+            </div>
         </div>
     </div>
 
@@ -184,7 +180,6 @@
         <button id="btn-put" class="btn btn-put"> Put </button>
         <button id="btn-delete" class="btn btn-delete"> Delete </button>
     </div>
-
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script type="module" src="index.js"></script>

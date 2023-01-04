@@ -58,14 +58,15 @@
     function Put(id) {
 
         const data =  {
+            id: parseInt(id.value),
             name: name.value,
             capital: capital.value,
             flag: flag.value,
             silhouette: silhouette.value,
-            population: population.value,
-            superficie: superficie.value,
+            population: parseInt(population.value),
+            superficie: parseInt(superficie.value),
             continent: continent.value,
-            pib: pib.value
+            pib: parseInt(pib.value)
         }
         
         axios.put("https://localhost:7192/api/country/1",data)
