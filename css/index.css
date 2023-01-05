@@ -1,5 +1,100 @@
+body {
+  font-family: "Century Gothic";
+  background-color: #333;
+  color: #fff;
+}
 
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-body{
-    background-color: black;
+.inner {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax( 150px, 2fr));
+  width: 80%;
+  padding: 20px;
+  border-radius: 15px;
+  /*border: 1px solid #ccc;*/
+}
+
+.input-box input {
+  background-color: #444;
+  border-color: #555;
+  color: #ccc;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 90%;  
+}
+
+.my-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+
+.my-console{
+    width: 80%;
+    padding: 10px;
+}
+
+.my-console textarea {
+  background-color: black;
+  color: antiquewhite;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+h2 {
+  text-align: center;
+}
+
+.btn {
+  font-size: 16px;
+  font-family: Century Gothic;
+  padding: 12px 24px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 10px 0px 10px 10px;
+  width: 100px;
+}
+
+.btn-get {
+  background-color: #ff9f1a;
+  border-color: #ff9f1a;
+  color: #ffffff;
+}
+
+.btn-post {
+  background-color: #9b59b6;
+  border-color: #9b59b6;
+  color: #ffffff;
+}
+
+.btn-put {
+  background-color: #27ae60;
+  border-color: #27ae60;
+  color: #ffffff;
+}
+
+.btn-delete {
+  background-color: #e74c3c;
+  border-color: #e74c3c;
+  color: #ffffff;
+}
+
+.btn:hover {
+  background-color: #efefef;
+  border-color: #efefef;
+  color: #333333;
+}
+
+.btn:active {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #dddddd;
+  border-color: #dddddd;
 }

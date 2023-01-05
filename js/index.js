@@ -1,5 +1,5 @@
+import { GetCountryById, GetAllCountries, PostCountry } from "./requests.js";
 
-    // Get all values!
     const id = document.getElementById('id-country');
     const name = document.getElementById('name');
     const capital = document.getElementById('capital');
@@ -14,47 +14,45 @@
     //
     const btnGet = document.getElementById("btn-get");
     const btnPut = document.getElementById("btn-put");
+    
+    _getAllCountries()
 
-    const baseUrl = 'https://localhost:7192/api'; // Only to test
+    function _getCountryById() {
+        if ( Number.isInteger(parseInt(id.value))) {
+            GetCountryById(id.value)
+                .then( data => {
+                    const myCountry = data[0];
+                    name.value = myCountry.name;
+                    capital.value = myCountry.capital;
+                    flag.value = myCountry.flag;
+                    silhouette.value = myCountry.silhouette;
+                    population.value = myCountry.population;
+                    superficie.value = myCountry.superficie;
+                    continent.value = myCountry.continent;
+                    pib.value = myCountry.pib;
+                    myCodeResp.value = JSON.stringify( myCountry, null, 2);            
+            })
+        }
+    }
 
-    axios.get(`${baseUrl}/country`)
-        .then(response => {
-            myCodeResp.value = JSON.stringify(response.data, null, 2);
-        });
+    function _getAllCountries() {
+        GetAllCountries()
+            .then( data => {
+                myCodeResp.value = JSON.stringify( data, null, 2 ); 
+            })
+    }
 
+    
     // - - - - - - - - - - - - - - - -
     btnGet.addEventListener( ('click'), () => {
-        Get(id);
+        _getCountryById();
     }) 
 
     btnPut.addEventListener( ('click'), () => {
         Put(id);
     }) 
-    
-
     //
-    function Get(id) {
-
-        if (id === "") {
-            // alert("no!")
-        }
-        else {        
-            axios.get(`${baseUrl}/Country/id/${id.value}`)
-                .then(response => {
-                    myCodeResp.value = JSON.stringify(response.data, null, 2);
-                
-                    name.value = response.data[0].name;
-                    capital.value = response.data[0].capital;
-                    flag.value = response.data[0].flag;
-                    silhouette.value = response.data[0].silhouette;
-                    population.value = response.data[0].population;
-                    superficie.value = response.data[0].superficie;
-                    continent.value = response.data[0].continent;
-                    pib.value = response.data[0].pib;
-                });
-        }   
-    }
-
+    
     function Put(id) {
 
         const data =  {
