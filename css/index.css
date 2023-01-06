@@ -1,14 +1,25 @@
+
+
 body {
   font-family: "Century Gothic";
   background-color: #333;
   color: #fff;
 }
 
+.my-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  max-width: 1000px;
+}
+
+
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
+
 
 .inner {
   display: grid;
@@ -29,10 +40,6 @@ body {
   width: 90%;  
 }
 
-.my-form {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-}
 
 .my-console{
     width: 80%;
