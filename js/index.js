@@ -74,12 +74,19 @@ import { GetCountryById, GetAllCountries, PostCountry } from "./requests.js";
                 console.log(error);
             });
     }
-    
+
     // Obtener los elementos del botón y del modal
     const btnModal = document.getElementById('btn-modal');
     const modal = document.getElementById('modal');
+    const btnClose = document.getElementById('btn-close');
 
     // Mostrar el modal al hacer clic en el botón
     btnModal.addEventListener('click', function() {
-    modal.style.display = 'block';
+        modal.style.display = 'block';
     });
+
+    // Ocultar el modal al hacer clic en el botón de cerrar
+    btnClose.addEventListener('click', function() {
+        modal.style.display = 'none';
+    });
+
