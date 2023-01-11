@@ -15,7 +15,53 @@ import { GetCountryById, GetAllCountries, PostCountry } from "./requests.js";
     const btnGet = document.getElementById("btn-get");
     const btnPut = document.getElementById("btn-put");
     
+    const main = document.getElementById("my-dashboard");
+
     _getAllCountries()
+
+    updateTable();
+
+    function updateTable() {
+        
+        GetAllCountries().then( data => {
+            
+            const tbl = document.createElement("table");
+            const tblBody = document.createElement("tbody");
+
+            for (let i = 0; i < data.length; i++) {
+            
+                const row = document.createElement("tr");
+                
+                const cell = document.createElement("td");
+                cell.innerHTML = data[i].id
+                row.appendChild(cell);
+
+                const cell2 = document.createElement("td");
+                cell2.innerHTML = data[i].name
+                row.appendChild(cell2);
+
+                const cell3 = document.createElement("td");
+                cell3.innerHTML = data[i].name
+                row.appendChild(cell3);
+
+                const cell4 = document.createElement("td");
+                cell4.innerHTML = data[i].name
+                row.appendChild(cell4);
+
+                const cell5 = document.createElement("td");
+                cell5.innerHTML = data[i].name
+                row.appendChild(cell5);              
+
+                // add the row to the end of the table body
+                tblBody.appendChild(row);
+            }
+
+            tbl.appendChild(tblBody);
+            main.appendChild(tbl);
+        
+        })
+
+    }
 
     function _getCountryById() {
         if ( Number.isInteger(parseInt(id.value))) {
