@@ -27,6 +27,25 @@ import { GetCountryById, GetAllCountries, PostCountry } from "./requests.js";
             
             const tbl = document.createElement("table");
             tbl.style = "table-layout:fixed;"
+            
+            // Table Head
+            const title = ["#","Name","Captial","Flag","Sillhouette"]
+            const tblHead = document.createElement("thead");
+            const row = document.createElement("tr")
+            tbl.appendChild(row);
+
+            title.forEach( i => {
+                //
+                const title = document.createElement("th");
+                title.innerHTML = i
+                row.appendChild(title)
+
+                //
+                tblHead.appendChild(row)
+            });
+            
+           
+            // Table Body
             const tblBody = document.createElement("tbody");
 
             for (let i = 0; i < data.length ; i++) {
@@ -35,7 +54,6 @@ import { GetCountryById, GetAllCountries, PostCountry } from "./requests.js";
                 
                 const cell = document.createElement("td");
                 cell.innerHTML = data[i].id
-                cell.style = "width: 50px"
                 row.appendChild(cell);
 
                 const cell2 = document.createElement("td");
@@ -63,6 +81,7 @@ import { GetCountryById, GetAllCountries, PostCountry } from "./requests.js";
                 tblBody.appendChild(row);
             }
 
+            tbl.appendChild(tblHead);
             tbl.appendChild(tblBody);
             main.appendChild(tbl);
         
@@ -121,8 +140,6 @@ import { GetCountryById, GetAllCountries, PostCountry } from "./requests.js";
         }
         
         let url = `https://localhost:7192/api/country/${id.value}`
-
-        console.log(url)
 
         axios.put(url ,data)
             .then(response => {
