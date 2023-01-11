@@ -26,14 +26,16 @@ import { GetCountryById, GetAllCountries, PostCountry } from "./requests.js";
         GetAllCountries().then( data => {
             
             const tbl = document.createElement("table");
+            tbl.style = "table-layout:fixed;"
             const tblBody = document.createElement("tbody");
 
-            for (let i = 0; i < data.length; i++) {
+            for (let i = 0; i < data.length ; i++) {
             
                 const row = document.createElement("tr");
                 
                 const cell = document.createElement("td");
                 cell.innerHTML = data[i].id
+                cell.style = "width: 50px"
                 row.appendChild(cell);
 
                 const cell2 = document.createElement("td");
@@ -41,15 +43,20 @@ import { GetCountryById, GetAllCountries, PostCountry } from "./requests.js";
                 row.appendChild(cell2);
 
                 const cell3 = document.createElement("td");
-                cell3.innerHTML = data[i].name
+                cell3.innerHTML = data[i].capital
                 row.appendChild(cell3);
 
+                // Flag Image
                 const cell4 = document.createElement("td");
-                cell4.innerHTML = data[i].name
+                const imageFlag = document.createElement('img')
+                imageFlag.src = data[i].flag
+                imageFlag.style = "height: 30px"
+                cell4.append(imageFlag);
+
                 row.appendChild(cell4);
 
                 const cell5 = document.createElement("td");
-                cell5.innerHTML = data[i].name
+                cell5.innerHTML = ""
                 row.appendChild(cell5);              
 
                 // add the row to the end of the table body
@@ -113,9 +120,13 @@ import { GetCountryById, GetAllCountries, PostCountry } from "./requests.js";
             pib: parseInt(pib.value)
         }
         
-        axios.put("https://localhost:7192/api/country/1",data)
+        let url = `https://localhost:7192/api/country/${id.value}`
+
+        console.log(url)
+
+        axios.put(url ,data)
             .then(response => {
-                console.log(response);
+                console.log("!" + response);
             }).catch(error => {
                 console.log(error);
             });
