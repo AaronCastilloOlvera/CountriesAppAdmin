@@ -29,7 +29,7 @@ import { GetCountryById, GetAllCountries, PostCountry } from "./requests.js";
             tbl.style = "table-layout:fixed;"
             
             // Table Head
-            const title = ["Id","Name","Captial","Flag","Sillhouette"]
+            const title = ["Id","Name","Captial","Flag","Sillhouette", "Action" ]
             const tblHead = document.createElement("thead");
             const row = document.createElement("tr")
             tbl.appendChild(row);
@@ -53,22 +53,22 @@ import { GetCountryById, GetAllCountries, PostCountry } from "./requests.js";
                 const row = document.createElement("tr");
                 
                 const cell = document.createElement("td");
-                cell.innerHTML = data[i].id
+                cell.innerHTML = data[i].id;
                 row.appendChild(cell);
 
                 const cell2 = document.createElement("td");
-                cell2.innerHTML = data[i].name
+                cell2.innerHTML = data[i].name;
                 row.appendChild(cell2);
 
                 const cell3 = document.createElement("td");
-                cell3.innerHTML = data[i].capital
+                cell3.innerHTML = data[i].capital;
                 row.appendChild(cell3);
 
                 // Flag Image
                 const cell4 = document.createElement("td");
-                const imageFlag = document.createElement('img')
-                imageFlag.src = data[i].flag
-                imageFlag.style = "height: 30px"
+                const imageFlag = document.createElement('img');
+                imageFlag.src = data[i].flag;
+                imageFlag.style = "height: 30px";
                 cell4.append(imageFlag);
                 row.appendChild(cell4);
 
@@ -78,6 +78,21 @@ import { GetCountryById, GetAllCountries, PostCountry } from "./requests.js";
                 imageSill.style = "height: 40px";
                 cell5.append(imageSill);
                 row.appendChild(cell5);              
+
+                const cell6 = document.createElement("td");
+                
+                const btnEdit = document.createElement("button")
+                btnEdit.innerHTML = " E "
+                btnEdit.className = "left-button"
+
+                const btnRemove = document.createElement("button")
+                btnRemove.innerHTML = " D "
+                btnRemove.className = "right-button"
+
+                cell6.append(btnEdit);
+                cell6.append(btnRemove);
+
+                row.appendChild(cell6);     
 
                 // add the row to the end of the table body
                 tblBody.appendChild(row);
