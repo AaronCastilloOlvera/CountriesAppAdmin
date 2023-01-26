@@ -28,7 +28,6 @@ body {
   max-width: 1000px;
 }
 
-
 .container {
     display: flex;
     justify-content: center;
@@ -69,9 +68,6 @@ body {
   box-sizing: border-box;
 }
 
-h2 {
-  text-align: center;
-}
 
 .btn {
   font-size: 16px;
@@ -152,6 +148,8 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: sticky;
+  top: 0;
 }
 
 .logo {
@@ -173,17 +171,9 @@ nav {
   color: #fff;
   text-decoration: none;
 }
-/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 
-
-
-
-
-
-
-
-/* - - - - - - - - - -- */
+/* - - C O U N T I E S   T A B L E - - - - - - - - - - - - - - - - */
 
 #my-dashboard{
   height: 400px; 
@@ -197,7 +187,6 @@ table {
   width: 100%;
   margin: 0 auto;
 }
-
 
 th {
   font-weight: bold; 
@@ -214,3 +203,5 @@ td {
 tr:nth-child(even) {
   /*background-color: #f2f2f2; /* color de fondo para filas pares */
 }
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
