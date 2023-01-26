@@ -8,12 +8,18 @@
   --dark-get-color: #6A50A7;
   --charcoal: #323133;
 
+  /* CRUD COLOR */
+  --add-color: #27ae60;
+  --edit-color: #ffc107;
+  --delete-color:#e74c3c;
 }
 
 body {
   font-family: "Century Gothic";
   background-color: #333;
   color: #fff;
+  margin: 0;
+  padding: 0;
 }
 
 .my-form {
@@ -101,7 +107,7 @@ h2 {
   border-color: var(--dark-get-color);
   color: #ffffff;
 }
-
+/*
 .btn:hover {
   background-color: #efefef;
   border-color: #efefef;
@@ -113,78 +119,83 @@ h2 {
   background-color: #dddddd;
   border-color: #dddddd;
 }
+*/
+ /* CRUD COLOR */
 
-
-/* CSS para el modal */
-#modal {
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.5);
+.btn-add {
+  background-color: var(--add-color);
+  border-color: var(--add-color);
+  color: #ffffff;
 }
 
-#modal-content {
-  background-color: #fefefe;
-  margin: 15% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
+.btn-edit {
+  background-color: var(--edit-color);
+  border-color: var(--edit-color);
+  color: #ffffff;
 }
 
-#modal-header {
-  background-color: #333;
+.btn-remove {
+  background-color: var(--delete-color);
+  border-color: var(--delete-color);
+  color: #ffffff;
+}
+
+
+
+
+/* - - - - - N A V B A R - - - - - - - - - - - - - - - - - - -  */ 
+
+nav {
+  background-color: red;
   color: #fff;
-  margin: 0;
-  padding: 10px;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-#modal-header h2 {
-  margin: 0;
-  display: inline-block;
+.logo {
+  font-size: 22px;
 }
 
-#btn-close {
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.nav-links li {
+  margin-left: 20px;
+}
+
+.nav-links li a {
   color: #fff;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-#btn-close:hover,
-#btn-close:focus {
-  color: #000;
   text-decoration: none;
-  cursor: pointer;
 }
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
-#modal-body {
-  padding: 20px;
-}
 
-#modal-footer {
-  background-color: #333;
-  color: #fff;
-  padding: 10px;
-  text-align: right;
-}
+
+
+
+
+
+
+
 /* - - - - - - - - - -- */
 
 #my-dashboard{
   height: 400px; 
   max-width: 700px;
   overflow-y: scroll;
-
+  padding: 10px
 }
 
 table {
   border-collapse: collapse; 
   width: 100%;
   margin: 0 auto;
-  
 }
 
 

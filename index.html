@@ -3,17 +3,45 @@
 <link rel="stylesheet" href="/css/index.css">
 <head>
 
+    <nav>
+        <div class="logo"> Countries App </div>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      
+      
 </head>
 
 <body>
     
-    <h2> Add Country </h2>
-    <div class="container" id="my-dashboard">
-        <!--table-->
+    <br> 
+    
+    <div class="container" id="my-dashboard"  style="width: 50%; margin: 0 auto;">
+        <!-- render table-->
     </div>
+
+    <div class="container">
+        <button  class="btn btn-add"> Add </button>
+        <button  class="btn btn-edit"> Edit </button>
+        <button  class="btn btn-remove"> Delete </button>
+    </div>
+
+    <br> <br> <br> <br> <br> <br> <br>
+    
+    <!--
+    <div class="container">
+        <button id="btn-get" class="btn btn-get"> Get </button>
+        <button id="btn-post" class="btn btn-post"> Post </button>
+        <button id="btn-put" class="btn btn-put"> Put </button>
+        <button id="btn-delete" class="btn btn-delete"> Delete </button>
+    </div>
+
     
     <div class="container">
-
         <div class="my-form">
             <div class="container">
                 <div class="inner">
@@ -64,38 +92,14 @@
             </div> 
         
         </div>
-    </div>
-
-    <div class="container">
-        <button id="btn-get" class="btn btn-get"> Get </button>
-        <button id="btn-post" class="btn btn-post"> Post </button>
-        <button id="btn-put" class="btn btn-put"> Put </button>
-        <button id="btn-delete" class="btn btn-delete"> Delete </button>
-    </div>
+    </div>  
     
-    <!-- HTML para el botón que abrirá el modal -->
-    <button id="btn-modal">Abrir modal</button>
+-->
 
-    <!-- HTML para el modal -->
-    <div id="modal" style="display: none;">
-        <div id="modal-content">
-            <div id="modal-header">
-                <span id="btn-close">&times;</span>
-                <h2>Título del modal</h2>
-            </div>
-            <div id="modal-body">
-                Contenido del modal
-            </div>
-            <div id="modal-footer">
-                <button id="btn-aceptar">Aceptar</button>
-                <button id="btn-cancelar">Cancelar</button>
-            </div>
-        </div>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script type="module" src="js/index.js"></script>
-   
 </body>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script type="module" src="js/index.js"></script>
+
 
 </html>

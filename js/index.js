@@ -29,7 +29,7 @@ import { GetCountryById, GetAllCountries, PostCountry } from "./requests.js";
             tbl.style = "table-layout:fixed;"
             
             // Table Head
-            const title = ["#","Name","Captial","Flag","Sillhouette"]
+            const title = ["Id","Name","Captial","Flag","Sillhouette"]
             const tblHead = document.createElement("thead");
             const row = document.createElement("tr")
             tbl.appendChild(row);
@@ -166,3 +166,25 @@ import { GetCountryById, GetAllCountries, PostCountry } from "./requests.js";
         modal.style.display = 'none';
     });
 
+/*    
+    <!-- HTML para el botón que abrirá el modal -->
+    <button id="btn-modal">Abrir modal</button>
+
+    <!-- HTML para el modal -->
+    <div id="modal" style="display: none;">
+        <div id="modal-content">
+            <div id="modal-header">
+                <span id="btn-close">&times;</span>
+                <h2>Título del modal</h2>
+            </div>
+            <div id="modal-body">
+                Contenido del modal
+            </div>
+            <div id="modal-footer">
+                <button id="btn-aceptar">Aceptar</button>
+                <button id="btn-cancelar">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    */
