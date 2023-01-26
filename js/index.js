@@ -70,11 +70,13 @@ import { GetCountryById, GetAllCountries, PostCountry } from "./requests.js";
                 imageFlag.src = data[i].flag
                 imageFlag.style = "height: 30px"
                 cell4.append(imageFlag);
-
                 row.appendChild(cell4);
 
                 const cell5 = document.createElement("td");
-                cell5.innerHTML = ""
+                const imageSill = document.createElement('img')
+                imageSill.src = data[i].silhouette
+                imageSill.style = "height: 40px";
+                cell5.append(imageSill);
                 row.appendChild(cell5);              
 
                 // add the row to the end of the table body
