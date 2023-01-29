@@ -81,16 +81,22 @@ import { GetCountryById, GetAllCountries, PostCountry } from "./requests.js";
 
                 const cell6 = document.createElement("td");
                 
+                // Edit Button
                 const btnEdit = document.createElement("button")
-                btnEdit.innerHTML = " E "
-                btnEdit.className = "left-button"
+                btnEdit.className = "btn-edit"
+                const iEdit = document.createElement("i");
+                iEdit.className = "fas fa-edit";
+                btnEdit.append(iEdit);
 
-                const btnRemove = document.createElement("button")
-                btnRemove.innerHTML = " D "
-                btnRemove.className = "right-button"
+                // Delete Button
+                const btnDelete = document.createElement("button")
+                btnDelete.className = "btn-delete"
+                const iDelete = document.createElement("i");
+                iDelete.className = "fas fa-trash";
+                btnDelete.append(iDelete);
 
                 cell6.append(btnEdit);
-                cell6.append(btnRemove);
+                cell6.append(btnDelete);
 
                 row.appendChild(cell6);     
 

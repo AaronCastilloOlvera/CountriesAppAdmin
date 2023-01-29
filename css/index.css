@@ -71,18 +71,20 @@ body {
 
 .btn {
   font-size: 12px;
-  font-family: Century Gothic;
   border-radius: 4px;
   cursor: pointer;
   transition: all 0.3s ease;
   margin: 10px 0px 10px 10px;
   width: 50px;
- 
 }
 
-.left-button, .right-button {
-  display: inline-block; /* para que los botones se muestren al lado de otro */
-  margin: 0 5px; /* para agregar un poco de espacio entre los botones */
+.btn-edit, .btn-delete {
+  display: inline-block;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 0 5px;
+  border-radius: 4px;
+  width: 30px;
 }
 
 .btn-get {
@@ -135,7 +137,7 @@ body {
   color: #ffffff;
 }
 
-.btn-remove {
+.btn-delete {
   background-color: var(--delete-color);
   border-color: var(--delete-color);
   color: #ffffff;
