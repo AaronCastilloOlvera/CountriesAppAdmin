@@ -22,52 +22,12 @@ body {
   padding: 0;
 }
 
-.my-form {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-  max-width: 1000px;
-}
 
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
-.inner {
-  display: grid;
-  grid-gap: 10px;
-  grid-template-columns: repeat(auto-fit, minmax( 150px, 2fr));
-  width: 80%;
-  padding: 20px;
-  border-radius: 15px;
-  border: 1px solid var( --dark-get-color);
-}
-
-.input-box input {
-  background-color: #444;
-  border-color: #555;
-  color: #ccc;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  width: 90%;  
-}
-
-
-.my-console{
-    width: 80%;
-    padding: 10px;
-}
-
-.my-console textarea {
-  background-color: black;
-  color: antiquewhite;
-  width: 100%;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
 
 .btn {
   font-size: 12px;
@@ -87,42 +47,7 @@ body {
   width: 30px;
 }
 
-.btn-get {
-  background-color: var(--dark-get-color);
-  border-color: var(--dark-get-color);
-  color: #ffffff;
-}
 
-.btn-post {
-  background-color: var(--dark-get-color);
-  border-color: var(--dark-get-color);
-  color: #ffffff;
-}
-
-.btn-put {
-  background-color: var(--dark-get-color);
-  border-color: var(--dark-get-color);
-  color: #ffffff;
-}
-
-.btn-delete {
-  background-color: var(--dark-get-color);
-  border-color: var(--dark-get-color);
-  color: #ffffff;
-}
-/*
-.btn:hover {
-  background-color: #efefef;
-  border-color: #efefef;
-  color: #333333;
-}
-
-.btn:active {
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  background-color: #dddddd;
-  border-color: #dddddd;
-}
-*/
  /* CRUD COLOR */
 
 .btn-add {
@@ -182,19 +107,49 @@ nav {
 
 /* - - C O U N T I E S   T A B L E - - - - - - - - - - - - - - - - */
 
-#my-dashboard{
-  height: 400px; 
-  max-width: 700px;
-  overflow-y: scroll;
-  padding: 10px
+.actionsTable{ 
+  display: flex;
+  align-items: center;
+  height: 35px;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 10px;
+  
 }
+
+#add-button {
+  float: right;
+  width: 15%;
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px;
+  cursor: pointer;
+  margin: 0 0 0 20px;
+}
+
+
+
+
+
+/* - - C O U N T I E S   T A B L E - - - - - - - - - - - - - - - - */
+
+
+#tableContainer{
+  width: 80%;
+  max-width: 800px;
+  /* overflow-y: scroll; **/
+  margin: 0 auto;
+}
+
 
 table {
   border-collapse: collapse; 
   width: 100%;
   margin: 0 auto;
 }
-
+ 
 th {
   font-weight: bold; 
   padding: 8px; 
@@ -208,7 +163,8 @@ td {
 }
 
 tr:nth-child(even) {
-  /*background-color: #f2f2f2; /* color de fondo para filas pares */
+  background-color: rgb(65, 65, 65);
 }
+
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */

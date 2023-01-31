@@ -15,7 +15,7 @@ import { GetCountryById, GetAllCountries, PostCountry } from "./requests.js";
     const btnGet = document.getElementById("btn-get");
     const btnPut = document.getElementById("btn-put");
     
-    const main = document.getElementById("my-dashboard");
+    const main = document.getElementById("tableContainer");
 
     _getAllCountries()
 
