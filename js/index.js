@@ -76,7 +76,7 @@ import { GetCountryById, GetAllCountries, PostCountry } from "./requests.js";
                 row.appendChild(cell5);              
 
                 const cell6 = document.createElement("td");
-                
+
                 // Edit Button
                 const btnEdit = document.createElement("button")
                 btnEdit.className = "btn-edit"
