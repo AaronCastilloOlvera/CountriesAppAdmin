@@ -105,40 +105,37 @@ nav {
 }
 
 
-/* - - C O U N T I E S   T A B L E - - - - - - - - - - - - - - - - */
+/* - - C O U N T I E S   T A B L E   A C T I O N S - - - - - - - - - - - - - - - - */
 
-.actionsTable{ 
+.actions-table{ 
   display: flex;
   align-items: center;
   height: 35px;
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
   padding: 10px;
   
 }
 
-#add-button {
-  float: right;
+.action-item {
   width: 15%;
   background-color: #27ae60;
   color: white;
   border: none;
   border-radius: 5px;
   padding: 8px;
-  cursor: pointer;
   margin: 0 0 0 20px;
 }
 
-
-
+.actions-table > :first-child {
+  font-size: 23px;
+}
 
 
 /* - - C O U N T I E S   T A B L E - - - - - - - - - - - - - - - - */
-
-
-#tableContainer{
-  width: 80%;
-  max-width: 800px;
+.container-table{
+  width: 100%;
+  max-width: 900px;
   /* overflow-y: scroll; **/
   margin: 0 auto;
 }
@@ -165,6 +162,5 @@ td {
 tr:nth-child(even) {
   background-color: rgb(65, 65, 65);
 }
-
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */

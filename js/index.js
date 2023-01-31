@@ -11,10 +11,6 @@ import { GetCountryById, GetAllCountries, PostCountry } from "./requests.js";
     const pib = document.getElementById('pib');
     const myCodeResp = document.getElementById("my-code");
 
-    //
-    const btnGet = document.getElementById("btn-get");
-    const btnPut = document.getElementById("btn-put");
-    
     const main = document.getElementById("tableContainer");
 
     _getAllCountries()
@@ -137,7 +133,7 @@ import { GetCountryById, GetAllCountries, PostCountry } from "./requests.js";
             })
     }
 
-    
+    /*
     // - - - - - - - - - - - - - - - -
     btnGet.addEventListener( ('click'), () => {
         _getCountryById();
@@ -147,6 +143,7 @@ import { GetCountryById, GetAllCountries, PostCountry } from "./requests.js";
         Put(id);
     }) 
     //
+    */
     
     function Put(id) {
 
