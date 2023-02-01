@@ -170,7 +170,7 @@ table {
   border-collapse: collapse;
   width: 100%;
   margin: 0 auto;
-}
+} 
 
 td {
   padding: 8px;
@@ -182,9 +182,6 @@ tr:nth-child(even) {
   background-color: rgb(65, 65, 65);
 }
 
-.td-actiontd-action {
-  width: 100px;
-}
 
 /* - - M O D A L - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
@@ -198,6 +195,14 @@ tr:nth-child(even) {
   height: 100%;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-header{
+  background-color: #e74c3c;
+  color: #fff;
+  top: 0;
+  top: -20px;
+  height: 50px;
 }
 
 .modal-content {
@@ -253,11 +258,12 @@ form {
   margin-top: 1em;
 }
 
-.my-form button[type="submit"] {
-  padding: 0.5em 1em;
+.modal-button{
+  padding: 10px 20px;
   background-color: #27ae60;
   border: none;
-  border-radius: 4px;
+  border-radius: 5px;
   color: white;
+  font-size: 16px;
   cursor: pointer;
 }

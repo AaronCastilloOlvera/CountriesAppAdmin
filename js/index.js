@@ -13,26 +13,10 @@ import { GetCountryById, GetAllCountries, PostCountry } from "./requests.js";
 
     const main = document.getElementById("tableContainer");
 
-    _getAllCountries()
 
-    updateTable();
+    window.onload(updateTable());
 
-    // JS for my Modal
-    const modal2 = document.getElementById("modal");
-    const btn = document.getElementById("openModalButton");
-    var span = document.getElementsByClassName("close")[0];
-
-    btn.onclick = () => { modal2.style.display = "block";  }
-
-    span.onclick = () => { modal2.style.display = "none"; }
- 
-    window.onclick = function (event) {
-        if (event.target == modal) {
-            modal2.style.display = "none";
-        }
-    }
-
-
+    
     function updateTable() {
         
         GetAllCountries().then( data => {
@@ -199,30 +183,3 @@ import { GetCountryById, GetAllCountries, PostCountry } from "./requests.js";
     btnClose.addEventListener('click', function() {
         modal.style.display = 'none';
     });
-
-
-    
-
-
-/*    
-    <!-- HTML para el botón que abrirá el modal -->
-    <button id="btn-modal">Abrir modal</button>
-
-    <!-- HTML para el modal -->
-    <div id="modal" style="display: none;">
-        <div id="modal-content">
-            <div id="modal-header">
-                <span id="btn-close">&times;</span>
-                <h2>Título del modal</h2>
-            </div>
-            <div id="modal-body">
-                Contenido del modal
-            </div>
-            <div id="modal-footer">
-                <button id="btn-aceptar">Aceptar</button>
-                <button id="btn-cancelar">Cancelar</button>
-            </div>
-        </div>
-    </div>
-
-    */
