@@ -9,34 +9,84 @@
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#about"> Documentation </a></li>
-            <li><a href="#services"> About </a></li> 
+            <li><a href="#services"> About </a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 </head>
 
 <body>
-    
     <br>
     <div class="container-table-lg">
         <div class="actions-table">
             <p> List of Contries </p>
-            <button class="action-item"> Add New </button>
-           
+            <button class="action-item" id="openModalButton"> Add New </button>
+
+            <!-- Modal -->
+            <div id="modal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p> Add a Country </p>
+
+                    <form class="my-form">
+                        <div>
+                            <label for="name"> Name: </label>
+                            <input type="text" id="name" required>
+                        </div>
+                        <div>
+                            <label for="email"> Capital: </label>
+                            <input type="text" id="Capital" required>
+                        </div>
+                        <div>
+                            <label for="phone"> Flag: </label>
+                            <input type="text" id="Flag" required>
+                        </div>
+                        <div>
+                            <label for="phone"> Sillhouette: </label>
+                            <input type="text" id="Sillhouette" required>
+                        </div>
+                        <div>
+                            <label for="name"> Population: </label>
+                            <input type="text" id="Population" required>
+                        </div>
+                        <div>
+                            <label for="email"> Superfice: </label>
+                            <input type="text" id="Superfice" required>
+                        </div>
+                        <div>
+                            <label for="phone"> Continent: </label>
+                            <input type="text" id="Continent" required>
+                        </div>
+                        <div>
+                            <label for="phone"> Flag: </label>
+                            <input type="text" id="Flag" required>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="submit"> Save </button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+
+            <!-- Actions  -->
             <div class="search-container">
                 <input type="text" placeholder="Buscar...">
                 <button>
-                  <i class="fa fa-search"></i>
+                    <i class="fa fa-search"></i>
                 </button>
-            </div>          
+            </div>
         </div>
 
-        <div class="container-table" id="tableContainer">   
+        <div class="container-table" id="tableContainer">
             <!-- render table-->
         </div>
+
+
     </div>
 
-    
+
     <!--
     <div class="container">
         <button class="btn btn-add"> Add </button>

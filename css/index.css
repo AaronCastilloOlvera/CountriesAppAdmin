@@ -1,6 +1,5 @@
-
-:root{
-  --get-color:#ff9f1a;
+:root {
+  --get-color: #ff9f1a;
   --post-color: #9b59b6;
   --put-color: #27ae60;
   --delete-color: #e74c3c;
@@ -11,7 +10,7 @@
   /* CRUD COLOR */
   --add-color: #27ae60;
   --edit-color: #ffc107;
-  --delete-color:#e74c3c;
+  --delete-color: #e74c3c;
 }
 
 body {
@@ -20,12 +19,13 @@ body {
   color: #fff;
   margin: 0;
   padding: 0;
-}
+  
+} 
 
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .btn {
@@ -37,7 +37,8 @@ body {
   width: 50px;
 }
 
-.btn-edit, .btn-delete {
+.btn-edit,
+.btn-delete {
   display: inline-block;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -47,7 +48,7 @@ body {
   height: 25px;
 }
 
- /* CRUD COLOR */
+/* CRUD COLOR */
 
 .btn-add {
   background-color: var(--add-color);
@@ -68,7 +69,7 @@ body {
 }
 
 
-/* - - - - - N A V B A R - - - - - - - - - - - - - - - - - - -  */ 
+/* - - - - - N A V B A R - - - - - - - - - - - - - - - - - - -  */
 
 nav {
   background-color: red;
@@ -104,13 +105,13 @@ nav {
 
 /* - - C O U N T I E S   T A B L E   A C T I O N S - - - - - - - - - - - - - - - - */
 
-.actions-table{ 
+.actions-table {
   display: flex;
   align-items: center;
   height: 35px;
   max-width: 900px;
   margin: 0 auto;
-  padding: 10px; 
+  padding: 10px;
 }
 
 .action-item {
@@ -123,7 +124,7 @@ nav {
   margin: 0 0 0 20px;
 }
 
-.actions-table > :first-child {
+.actions-table> :first-child {
   font-size: 23px;
 }
 
@@ -133,7 +134,7 @@ nav {
   background-color: lightgray;
   border-radius: 10px;
   padding: 4px;
-  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   margin: 0 0 0 20px;
 }
 
@@ -158,7 +159,7 @@ nav {
 }
 
 /* - - C O U N T I E S   T A B L E - - - - - - - - - - - - - - - - */
-.container-table{
+.container-table {
   width: 100%;
   max-width: 900px;
   /* overflow-y: scroll; **/
@@ -166,13 +167,13 @@ nav {
 }
 
 table {
-  border-collapse: collapse; 
+  border-collapse: collapse;
   width: 100%;
   margin: 0 auto;
 }
 
 td {
-  padding: 8px; 
+  padding: 8px;
   text-align: center;
   border-bottom: 1px solid #ddd;
 }
@@ -181,8 +182,87 @@ tr:nth-child(even) {
   background-color: rgb(65, 65, 65);
 }
 
-.td-actiontd-action{
+.td-actiontd-action {
   width: 100px;
 }
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+/* Modal Styling */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #323133;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  max-width: 900px;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 1em;
+  grid-row-gap: 1em;
+
+/*
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: auto;
+  */
+}
+
+.my-form label,
+.my-form input {
+  width: 100%;
+  padding: 6px;
+  font-size: 15px;
+  box-sizing: border-box;
+}
+
+.my-form input[type="text"],
+.my-form input[type="email"] {
+  border: 1px solid lightgray;
+  border-radius: 6px;
+}
+
+.form-actions {
+  grid-column: 1 / span 2;
+  text-align: center;
+  margin-top: 1em;
+}
+
+.my-form button[type="submit"] {
+  padding: 0.5em 1em;
+  background-color: #27ae60;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+}

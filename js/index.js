@@ -17,6 +17,30 @@ import { GetCountryById, GetAllCountries, PostCountry } from "./requests.js";
 
     updateTable();
 
+    // JS for my Modal
+    const modal2 = document.getElementById("modal");
+    const btn = document.getElementById("openModalButton");
+    var span = document.getElementsByClassName("close")[0];
+
+    btn.onclick = () => { 
+        modal2.style.display = "block";  
+        document.body.style.overflow = "hidden";
+    }
+
+
+    span.onclick = () => { 
+        modal2.style.display = "none";
+        document.body.style.overflow = "auto";
+    }
+
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal2.style.display = "none";
+            document.body.style.overflow = "auto";
+        }
+    }
+
+
     function updateTable() {
         
         GetAllCountries().then( data => {
@@ -183,6 +207,10 @@ import { GetCountryById, GetAllCountries, PostCountry } from "./requests.js";
     btnClose.addEventListener('click', function() {
         modal.style.display = 'none';
     });
+
+
+    
+
 
 /*    
     <!-- HTML para el botón que abrirá el modal -->
