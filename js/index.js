@@ -22,21 +22,13 @@ import { GetCountryById, GetAllCountries, PostCountry } from "./requests.js";
     const btn = document.getElementById("openModalButton");
     var span = document.getElementsByClassName("close")[0];
 
-    btn.onclick = () => { 
-        modal2.style.display = "block";  
-        document.body.style.overflow = "hidden";
-    }
+    btn.onclick = () => { modal2.style.display = "block";  }
 
-
-    span.onclick = () => { 
-        modal2.style.display = "none";
-        document.body.style.overflow = "auto";
-    }
-
+    span.onclick = () => { modal2.style.display = "none"; }
+ 
     window.onclick = function (event) {
         if (event.target == modal) {
             modal2.style.display = "none";
-            document.body.style.overflow = "auto";
         }
     }
 
