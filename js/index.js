@@ -1,4 +1,6 @@
+
 import { GetCountryById, GetAllCountries, PostCountry } from "./requests.js";
+
 
     const id = document.getElementById('id-country');
     const name = document.getElementById('name');
@@ -12,17 +14,63 @@ import { GetCountryById, GetAllCountries, PostCountry } from "./requests.js";
     const myCodeResp = document.getElementById("my-code");
 
     const main = document.getElementById("tableContainer");
+    
+    function Employee ( name, position, salary, office ) {
+        this.name = name;
+        this.position = position;
+        this.salary = salary;
+        this._office = office;
+     
+        this.office = function () {
+            return this._office;
+        }
+    };
+
+    GetAllCountries().then( mydata => { 
 
 
-    window.onload(updateTable());
+        $(document).ready(function () {
+            $('#table_id').DataTable({
+                data: mydata,
+                columns: [
+
+                    { data: 'id', title: 'Id' },
+                    { data: 'name', title: 'Name' },
+                    { data: 'capital', title: 'Captial' },
+                    {
+                        data: 'flag', title: 'Flag' ,
+                        render: (data) => {
+                            return `<img src=${data}  style=width:50px >`;
+                        }
+                    },
+                    {
+                        data: 'silhouette', title: 'Silhouette',
+                        render: (data) => {
+                            return `<img src=${data}  style=width:50px >`;
+                        }
+                    },
+                    { data: 'continent', title: 'Continent' }
+                ],
+                "columnDefs": [
+                    {"className": "dt-center", "targets": "_all"}
+                  ],
+            })
+        });
+
+    })
+
 
     
+    
+
+   
+
     function updateTable() {
         
         GetAllCountries().then( data => {
             
             const tbl = document.createElement("table");
-            tbl.style = "table-layout:fixed;"
+            tbl.className = "table table-striped table-hover"
             
             // Table Head
             const title = ["Id","Name","Captial","Flag","Sillhouette", "Action" ]
@@ -133,6 +181,7 @@ import { GetCountryById, GetAllCountries, PostCountry } from "./requests.js";
             })
     }
 
+
     /*
     // - - - - - - - - - - - - - - - -
     btnGet.addEventListener( ('click'), () => {
@@ -168,18 +217,3 @@ import { GetCountryById, GetAllCountries, PostCountry } from "./requests.js";
                 console.log(error);
             });
     }
-
-    // Obtener los elementos del botón y del modal
-    const btnModal = document.getElementById('btn-modal');
-    const modal = document.getElementById('modal');
-    const btnClose = document.getElementById('btn-close');
-
-    // Mostrar el modal al hacer clic en el botón
-    btnModal.addEventListener('click', function() {
-        modal.style.display = 'block';
-    });
-
-    // Ocultar el modal al hacer clic en el botón de cerrar
-    btnClose.addEventListener('click', function() {
-        modal.style.display = 'none';
-    });
