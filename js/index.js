@@ -1,22 +1,8 @@
 import { GetCountryById, GetAllCountries } from "./requests.js";
-
-    const id = document.getElementById('id-country');
-    const name = document.getElementById('name');
-    const capital = document.getElementById('capital');
-    const flag = document.getElementById('flag');
-    const silhouette = document.getElementById('silhouette');
-    const population = document.getElementById('population');
-    const superficie = document.getElementById('superficie');
-    const continent = document.getElementById('continent');
-    const pib = document.getElementById('pib');
-    const myCodeResp = document.getElementById("my-code");
-
-    const main = document.getElementById("tableContainer");
     
     GetAllCountries().then( mydata => { 
 
-
-        $(document).ready(function () {
+        $(document).ready( () => {
             $('#table_id').DataTable({
                 data: mydata,
                 columns: [
@@ -76,7 +62,11 @@ import { GetCountryById, GetAllCountries } from "./requests.js";
         };
         reader.readAsArrayBuffer(file);
     });
+
+
+
     
+
     function updateTable() {
         
         GetAllCountries().then( data => {
@@ -165,32 +155,6 @@ import { GetCountryById, GetAllCountries } from "./requests.js";
             main.appendChild(tbl);
         
         })
-
-    }
-
-    function _getCountryById() {
-        if ( Number.isInteger(parseInt(id.value))) {
-            GetCountryById(id.value)
-                .then( data => {
-                    const myCountry = data[0];
-                    name.value = myCountry.name;
-                    capital.value = myCountry.capital;
-                    flag.value = myCountry.flag;
-                    silhouette.value = myCountry.silhouette;
-                    population.value = myCountry.population;
-                    superficie.value = myCountry.superficie;
-                    continent.value = myCountry.continent;
-                    pib.value = myCountry.pib;
-                    myCodeResp.value = JSON.stringify( myCountry, null, 2);            
-            })
-        }
-    }
-
-    function _getAllCountries() {
-        GetAllCountries()
-            .then( data => {
-                myCodeResp.value = JSON.stringify( data, null, 2 ); 
-            })
     }
 
 
