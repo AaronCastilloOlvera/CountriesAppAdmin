@@ -1,6 +1,4 @@
-
-import { GetCountryById, GetAllCountries, PostCountry } from "./requests.js";
-
+import { GetCountryById, GetAllCountries } from "./requests.js";
 
     const id = document.getElementById('id-country');
     const name = document.getElementById('name');
@@ -15,17 +13,6 @@ import { GetCountryById, GetAllCountries, PostCountry } from "./requests.js";
 
     const main = document.getElementById("tableContainer");
     
-    function Employee ( name, position, salary, office ) {
-        this.name = name;
-        this.position = position;
-        this.salary = salary;
-        this._office = office;
-     
-        this.office = function () {
-            return this._office;
-        }
-    };
-
     GetAllCountries().then( mydata => { 
 
 
@@ -40,31 +27,56 @@ import { GetCountryById, GetAllCountries, PostCountry } from "./requests.js";
                     {
                         data: 'flag', title: 'Flag' ,
                         render: (data) => {
-                            return `<img src=${data}  style=width:50px >`;
+                            return `<img src=${data}  style=width:40px >`;
                         }
                     },
                     {
                         data: 'silhouette', title: 'Silhouette',
                         render: (data) => {
-                            return `<img src=${data}  style=width:50px >`;
+                            return `<img src=${data}  style=width:40px >`;
                         }
                     },
-                    { data: 'continent', title: 'Continent' }
+                    { data: 'continent', title: 'Continent' },
+                    { data: 'population', title: 'Population', mask: "#,##0",  },
+                    {
+                        data: null,
+                        title: 'Actions',
+                        defaultContent: " <button class='btn btn-warning'> " +
+                                            '<i class="bi bi-pen text-light" ></i>' +
+                                        " </button> " +
+                                        " <button class='btn btn-danger'> " + 
+                                            '<i class="bi bi-trash3 text-light" ></i>' +
+                                        " </button>" 
+                    }
+                    
                 ],
                 "columnDefs": [
                     {"className": "dt-center", "targets": "_all"}
-                  ],
+                    
+                  ], 
             })
         });
 
     })
 
 
-    
-    
+    // Obtiene el elemento input
+    const inputFile = document.getElementById('inputFile');
+    inputFile.addEventListener('change', (event) => {
+       
+        const file = event.target.files[0];
+        const reader = new FileReader();
+        reader.onload = (event) => {
+            const data = new Uint8Array(event.target.result);
+            const workbook = XLSX.read(data, { type: 'array' });
+            const sheet = workbook.Sheets[workbook.SheetNames[0]];
+            const array = XLSX.utils.sheet_to_json(sheet, { header: 1 });
 
-   
-
+            console.log(array);
+        };
+        reader.readAsArrayBuffer(file);
+    });
+    
     function updateTable() {
         
         GetAllCountries().then( data => {
